@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        #{anuncioBean.actualizarAnuncio()}
+        <title>xXCHUCHERIASXx</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <h:outputStylesheet library="css" name="header.css"/>
+        <h:outputStylesheet library="css" name="/slider/slider.css"/>
+        <h:outputStylesheet library="css" name="footer.css"/>
+        <h:outputStylesheet library="css" name="index.css"/>
+
+        <h:outputScript library="js" name="jquery.min.js"/>
+
+        <script src="sliderengine/amazingslider.js"></script>
+        <link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css"/>
+        <script src="sliderengine/initslider-1.js"></script>
+        <styles>
+
+        </styles>
+
+
+    </h:head>
+    <h:body>
+        <ui:include src="WEB-INF/importante/header.xhtml"/>
+
+        <section id="section-slider" style="background-color: #101010; padding-top: 70px; padding-bottom: 30px;">
+
+            <div class="container">
+                <div id="amazingslider-wrapper-1" class=" col-xs-12 col-lg-9 col-lg-pull-1 pull-right" style="display:block;position:relative; padding-left:0px; padding-right:148px;margin:0px auto 0px;">
+                    <div id="amazingslider-1" style="display:block;position:relative;margin:0 auto;">
+                        <ul class="amazingslider-slides" style="display:none;">
+
+                            <ui:repeat  value="#{anuncioBean.getGetAnuncio()}" var="slider"  >
+                                <li >
+                                    <img src="imagen?foto=${anuncioBean.limpiaString(slider.foto1)}1.jpg${anuncioBean.simbolo}porcentaje=50${anuncioBean.simbolo}ancho=0${anuncioBean.simbolo}alto=0" class="img-responsive" title="${anuncioBean.limpiaString(slider.titulo)} ${slider.precio} ${anuncioBean.limpiaString(slider.moneda)}" alt="${anuncioBean.limpiaString(slider.titulo)}" />
+                                </li>
+                            </ui:repeat>
+                        </ul>
+                        <ul class="amazingslider-thumbnails" style="display:none;">
+                            <ui:repeat  value="#{anuncioBean.getGetAnuncio()}" var="slider"  >
+
+
+                                <li >
+                                    <img src="imagen?foto=${anuncioBean.limpiaString(slider.foto1)}1.jpg${anuncioBean.simbolo}porcentaje=0${anuncioBean.simbolo}ancho=140${anuncioBean.simbolo}alto=90" title="${anuncioBean.limpiaString(slider.titulo)}"  alt="${anuncioBean.limpiaString(slider.titulo)}" />
+                                </li>
+                            </ui:repeat>
+                        </ul>
+                        <div class="amazingslider-engine"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section style="padding-top: 15px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+                        <h:form >
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon "><h6><span class="glyphicons  glyphicons-bluetooth">Busqueda</span></h6></span>
+                                    <h:inputText  required="true" requiredMessage="Se Necesita un Valor para Buscar" id="buscar" class="form-control input-lg buscador " />
+                                    <span class="input-group-btn">
+                                        <h:commandButton value="Buscar" onclick="return buscar();" class="btn btn-primary btn-lg " />
+                                    </span>
+                                </div>
+                                <div id="buscardiv">
+                                    <h:message   for="buscar" class="alert alert-danger"  >
+                                        <button class="close" data-dismiss="alert"><span></span></button>
+                                    </h:message>
+                                </div>
+                                <div id="buscardiv2" class="alert alert-danger">
+                                    <button class="close" data-dismiss="alert"><span></span></button>
+                                    <span>Busqueda:</span>Campo Requerido
+                                </div>
+                            </div>
+                        </h:form>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container">
+            <div class="row">
+                <div  style="text-align: center;">
+                    <h1><small><h:outputLabel value="Anuncios Recientes"/></small></h1>
+                </div>
+
+
+
+
+
+                <div class="col-xs-12 col-lg-12 col-md-12 col-lg-11" >
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a class="menuoption" href="#catalogo">GENERAL</a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle menuoption " data-toggle="dropdown" href="#">VESTIMENTAS
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">POLOCHE</a></li>
+                                <li class="divider"></li>
+
+                                <li><a href="#">CALSADO</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">INTERIORES</a></li> 
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle menuoption " data-toggle="dropdown" href="#">COMPUTACIÓN
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">CELULAR</a></li>
+                                <li class="divider"></li>
+
+                                <li><a href="#">LAPTOS</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">DESKTOP</a></li> 
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle menuoption " data-toggle="dropdown" href="#">DEPORTES
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">BICICLETA</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle menuoption btn "  data-toggle="dropdown" href="#">VEHICULOS
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">CARROS</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">CAMIONES</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">JEPETAS</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a class=" menuoption " href="#">ENTRETENIMIENTO</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle menuoption " data-toggle="dropdown" href="#">Hogar
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">MESA</a></li>
+                                <li class="divider"></li>
+
+                                <li><a href="#">COMEDOR</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">JUEGO DE HABITACION</a></li> 
+                            </ul>
+                        </li>
+                        <li><a class=" menuoption " href="#">OTROS</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section>
+            <div class="container" >
+
+                <div class="row">
+
+                    <div id="arriba" /> 
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 catalogo "  >
+                        <h:form id="formcatalogo">
+
+
+                            <ui:repeat value="${anuncioBean.getGetAnuncio()}" var="catalogo">
+
+
+                                <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 thumbnail anuncios2 " >
+
+
+                                    <figure class="wow renderizar fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+                                        <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+                                            <a href="galeria.xhtml?anuncio=${catalogo.id}" title="click para ver mas detalles" > 
+
+                                                <img src="imagen?foto=${anuncioBean.limpiaString(catalogo.foto1)}1.jpg${anuncioBean.simbolo}porcentaje=0${anuncioBean.simbolo}ancho=225${anuncioBean.simbolo}alto=150" class="  img-responsive" alt="this is a title" />
+                                            </a>
+
+                                        </div>
+
+                                    </figure>
+
+                                    <div class="col-xs-6  col-sm-12 col-md-12 col-lg-12">
+                                        <figcaption >
+                                            <p>
+                                                <h6>
+                                                    <strong style="color: black;">
+
+
+                                                       ${anuncioBean.limpiaString(catalogo.titulo)}
+
+
+
+                                                    </strong>
+
+                                                </h6>
+                                            </p>
+                                            <p style="color: black;">
+
+                                                <h5> ${anuncioBean.limpiaString(catalogo.categoria)}, ${anuncioBean.limpiaString(catalogo.tipo)}</h5>
+                                            </p>
+
+                                            <p>
+                                                ${catalogo.precio} ${anuncioBean.limpiaString(catalogo.moneda)}
+                                            </p>
+
+
+
+
+
+                                        </figcaption>
+                                    </div>
+
+
+                                </div>
+
+
+
+                            </ui:repeat>
+                        </h:form>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+        </section>
+
+
+        <section>
+            <div class="container" style="margin-bottom: 35px; margin-top: 5px;">
+
+                
+                    <h:form>
+                       
+                        <div class="row">
+                            <div class="  col-xs-2 col-lg-3" >
+                                
+                            </div>
+                                
+                            
+                            <div class="col-xs-2 col-lg-2">
+                                <h:commandLink  id="atras" onclick="paginas('-');" value="Atras" style="background-color: black; color: white;" class=" btn  btn-sm ${anuncioBean.llamadaAatras}" actionListener="#{anuncioBean.atrasCatalogo()}" >
+                                    <f:ajax execute="@form" render="siguiente atras :formcatalogo" />
+                                </h:commandLink>
+                            </div>
+                            <div class="col-xs-3 col-lg-2">
+                               <h4 id="paginador"> <p> 1 / 100  </p></h4>
+                            </div>
+                            <div class="col-xs-2 col-lg-2">
+                                <h:commandLink id="siguiente" onclick="paginas('+');"  style="background-color: black; color: white; " class=" btn  btn-sm ${anuncioBean.llamadaAsiguiente}" value="Siguiente" actionListener="#{anuncioBean.siguienteCatalogo()}"  >
+                                    <f:ajax execute="@form" render="siguiente atras :formcatalogo"  />
+                                </h:commandLink>
+                            </div>
+                            <div class=" col-xs-2 col-lg-3" >
+                                
+                            </div>
+                        </div>
+                            
+                    </h:form>
+                
+            </div>
+          
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <ui:include src="WEB-INF/importante/footer.xhtml"/>
+
+
+
+
+
+
+
+        <h:outputScript library="js" name="mis_js/index.js"/>
+
+        <h:outputScript library="js" name="bootstrap.min.js"/>
+
+
+
+
+    </h:body>
+
+</html>

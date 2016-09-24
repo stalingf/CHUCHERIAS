@@ -1,0 +1,119 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18-jun-2016, 12:14:22
+    Author     : STALING
+*/
+
+.color{
+
+    color: white;
+}
+
+.menuoption{
+    color:#269abc;
+
+}
+#buscardiv2{
+    display: none;
+}
+#exitocreacuenta{
+    display: none;
+}
+
+#errorcreacuenta{
+    display: none;
+}
+
+.fututoAnuncios{
+    height: 600px;
+    background-color: #ffffff;
+    border: 1px solid #2aabd2;
+
+
+}
+#descripcion{
+
+
+    border: 1px solid #2aabd2;
+
+
+}
+.viewvalid{
+    display: none;
+
+}
+.carousel{
+    background: #2f4357;
+    margin-top: 20px;
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+}
+.bs-example{
+    margin: 20px;
+}
+
+
+.cargando{
+    display: none;
+}
+.cargandoLogin{
+    display: none;
+}
+.anuncios{
+
+    padding-top: 20px;
+    border-top:2px solid #2f4357; 
+    border-left:2px solid #2f4357; 
+    border-right:2px solid #2f4357; 
+    border-bottom:1px solid #2f4357; 
+
+}
+.catalogo{
+
+
+
+    margin-top: 20px;
+    /* color: #e0e0e0*/
+    border-top:5px solid black; 
+    border-left:2px solid black; 
+    border-right:2px solid black; 
+    border-bottom:2px solid black; 
+
+
+
+
+}
+
+.anuncios2{
+
+
+
+    margin-top: 5px;
+    height: 230px;
+}
+
+
+@media only screen and (max-width: 770px) {
+    .anuncios2 {
+
+        height: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    
+    .section-slider{
+
+        height: 800px;
+    }
+    .amazingslider-1{
+        
+        width: 700px;
+    }
+}

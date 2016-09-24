@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+
+        <title>Crea tu Anuncio</title>
+        #{usuariosBean.verificarSession()}
+        #{misAnunciosBean.actualizarCategoriaYTipo()}
+
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+
+        <h:outputStylesheet library="css" name="header.css"/>
+        <h:outputStylesheet library="css" name="footer.css"/>
+        <h:outputScript library="js" name="jquery.min.js"/>
+        <style>
+            .btn-file {
+                position: relative;
+                overflow: hidden;
+            }
+            .fututoAnuncios{
+                height: 600px;
+                background-color: #ffffff;
+                border: 1px solid #2aabd2;
+
+
+            }
+            .btn-file input[type=file] {
+                position: absolute;
+                top: 0;
+                right: 0;
+                min-width: 100%;
+                min-height: 100%;
+                font-size: 100px;
+                text-align: right;
+                filter: alpha(opacity=0);
+                opacity: 0;
+                outline: none;
+                background: white;
+                cursor: inherit;
+                display: block;
+            }
+            #txtinfoarticulo{
+
+                text-align: center;
+            }
+            .viewvalid{
+
+                display: none;
+            }
+            #cargandoCrearAnuncio{
+                display: none;
+
+            }
+            .sub-alert{
+                height: 20px;
+
+            }
+            .cargando{
+                display: none;
+
+            }
+            #pregreso{
+                display: none;
+
+            }
+            .anuncios{
+                padding-bottom: 4px;
+                padding-top: 6px;
+
+                border-bottom:1px solid #000; 
+
+            }
+
+            .lasfotos{
+                height: 20px;
+
+            }
+        </style>
+
+    </h:head>
+    <h:body id="cuerpo">
+        <ui:include src="WEB-INF/importante/header.xhtml"/>
+
+        <section style="padding-top: 60px;">
+            <div class="page-header" style="text-align: center;">
+                <h1><small><h:outputLabel value="MIS ANUNCIOS"/></small></h1>
+            </div>
+        </section>
+
+        <section style="padding-bottom: 40px;">
+            <div class="container" id="catalogo">
+
+                <div class="row">
+                    <div class=" fututoAnuncios col-md-2 col-lg-2 visible-md visible-lg ">
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                    </div>
+
+
+                    <div style="" class="col-xs-12 col-lg-12 col-md-8 col-lg-8 ">
+                        <h:form   id="contenido">
+                            <script>
+                                actualizar();
+
+                            </script>
+                            <ui:repeat id="repetidor" value="${misAnunciosBean.buscarMisAnuncios()}" var="mis">
+
+                                <div   class="col-xs-12 anuncios  col-md-12 col-lg-12">
+                                    <div class="row">
+                                        <div class="col-xs-10 col-sm-4 col-md-4 col-lg-4 col-xs-offset-1">
+                                            <figure class=" fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+                                                <a>
+                                                    <img src="imagen?foto=${anuncioBean.limpiaString(mis.foto1)}1.jpg${anuncioBean.simbolo}porcentaje=0${anuncioBean.simbolo}ancho=225${anuncioBean.simbolo}alto=150" class="  img-responsive  img-thumbnail" />
+                           
+                                                     </a>
+                                            </figure>
+
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xs-offset-1 ">
+                                            <figure>
+                                                <figcaption>
+                                                    <h4>                                               
+
+                                                        <strong>
+                                                            ${anuncioBean.limpiaString(mis.titulo)}
+                                                        </strong>
+
+                                                    </h4>
+
+
+                                                    <p>
+                                                        <h5>${anuncioBean.limpiaString(mis.categoria)}, ${anuncioBean.limpiaString(mis.tipo)}</h5>
+                                                    </p>
+
+
+                                                    <p>
+                                                        <h5>${anuncioBean.limpiaString(mis.precio)} ${anuncioBean.limpiaString(mis.moneda)}</h5>
+                                                    </p>
+
+                                                    <p>
+                                                        <h5>Publicado: ${mis.publicado}</h5>
+                                                    </p>
+                                                    
+                                                    <h:commandButton  class="btn btn-success modificar col-xs-offset-4 col-lg-offset-4 "  actionListener="#{misAnunciosBean.paraModificarMetodo(mis.id)}"  title="Modificar" value="Modificar">
+                                                        <f:ajax   render=":modificarAnuncio" /> 
+                                                    </h:commandButton>
+
+
+                                                    <h:commandButton id="eliminar" onblur="olcultar(id);" class="btn btn-danger  pull-left " value="Eliminar" title="Eliminar">
+                                                        <script>
+                                                            function olcultar(id){
+                                                                alert("mi id"+id);
+                                                                $("#"+id).hide();
+                                                            }
+                                                            
+                                                        </script>
+                                                        <f:ajax  listener="#{misAnunciosBean.eliminar(mis.id)}"  render="contenido"/>
+                                                    </h:commandButton>
+                                                    
+
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </ui:repeat>
+                        </h:form>
+
+                    </div>
+                  
+
+                    <div class=" fututoAnuncios col-md-2 col-lg-2 visible-md visible-lg ">
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <ui:include src="WEB-INF/importante/footer.xhtml"/>
+        <div class="modal fade bs-example-modal-lg" id="modificar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h3 style="text-align: center;" class="modal-title">Modificar</h3>
+                    </div>
+                    <h:form class="form-horizontal"   id="modificarAnuncio" enctype="multipart/form-data"   >
+
+                        <div class="modal-body">
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+
+                                        <h:outputLabel class="control-label hidden-xs hidden-sm col-md-2 col-lg-2" value="Categoria:" for="txtcategoria"/>
+                                        <div  class="col-xs-12 col-sm-12 col-md-10 col-lg-9 pull-right">
+                                            <h:selectOneMenu value="#{misAnunciosBean.anuncioParaGuardar.categoria}"  onblur="actualizarelementos('txtcategoriadiv', id, 'txtcategoriadiv2');" required="true" requiredMessage="Categoria: Campo Requedido" id="txtcategoria"  class=" nuevo_anuncio form-control input-lg" >
+                                                <f:selectItems value="#{misAnunciosBean.listadoCategoria}"  var="categoria" itemLabel="#{categoria.categoria}" itemValue="#{categoria.categoria}"/>
+                                                <f:ajax  execute="@this" listener="#{misAnunciosBean.actualizarTipo}" event="change" render="txttipos"/>
+
+                                            </h:selectOneMenu>
+                                            <br/>
+                                            <div id="txtcategoriadiv2" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Categoria:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel  class="control-label hidden-xs hidden-sm col-md-2 col-lg-2" value="Tipo: " for="txttipos"/>
+
+                                        <div  class="col-xs-12 col-sm-12 col-md-10 col-lg-9 pull-right">
+                                            <h:selectOneMenu  value="#{misAnunciosBean.anuncioParaGuardar.tipo}" required="true" requiredMessage="Tipo: Campo Requedido" onchange="actualizarelementos('txttipodiv', id, 'txttipodiv2');" id="txttipos"  class=" nuevo_anuncio form-control input-lg">
+
+                                                <f:selectItems value="#{misAnunciosBean.tipoDepurado}" var="tipos" itemLabel="#{tipos.tipoCategoria}" itemValue="#{tipos.tipoCategoria}" />
+                                            </h:selectOneMenu>
+                                            <br/>
+                                            <div id="txttipodiv2" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Tipo:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label hidden-xs hidden-sm  col-md-2 col-lg-2"  value="Titulo:" for="txtitulo_anuncio"/>
+                                        <div  class="col-xs-12 col-sm-12 col-md-10 col-lg-9 pull-right">
+                                            <h:inputText value="#{misAnunciosBean.anuncioParaGuardar.titulo}" a:placeholder="Titulo" required="true" requiredMessage="Titulo: Campo Requedido" onkeyup="actualizarelementos('txtitulo_anunciodiv', id, 'txtitulo_anunciodiv2');" id="txtitulo_anuncio"   class=" nuevo_anuncio form-control input-lg"/>
+
+                                            <br/>
+                                            <div id="txtitulo_anunciodiv2" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Titulo:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label col-md-2 col-lg-2 hidden-xs hidden-sm " for="txtprecio" value="Precio:" />
+                                        <div  class="col-xs-12 col-sm-12 col-md-10 col-lg-9 pull-right">
+                                            <h:inputText   onfocus="this.type = 'number';" a:placeholder="Precio" value="#{misAnunciosBean.anuncioParaGuardar.precio}" onkeyup="actualizarelementos('txtpreciodiv', id, 'txtpreciodiv2');"   required="true" requiredMessage="Precio: Requedido" class=" precio nuevo_anuncio form-control input-lg" id="txtprecio"  >
+                                                <f:validateLongRange  for="txtprecio" minimum="10" maximum="9999999999"></f:validateLongRange>
+                                            </h:inputText>
+                                            <br/>
+                                            <div  class="sub-alert" >
+                                                <div id="txtpreciodiv2" class="alert alert-danger viewvalid" >
+                                                    <button class="close" data-dismiss="alert"><span></span></button>
+                                                    <strong>Precio:</strong> Campo Requerido
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label hidden-xs hidden-sm  col-md-2 col-lg-2"  value="Descripción:" for="txtdescripcion"/>
+                                        <div id="descripciontxt" class="col-xs-12 col-lg-12 col-md-10 col-lg-9 pull-right">
+                                            <h:inputTextarea a:placeholder="Descripción" value="#{misAnunciosBean.anuncioParaGuardar.descripcion}"  onkeyup="actualizarelementosdescripcion('txtdescripciondiv', id, 'txtdescripciondiv2');"  style="height:150px;" requiredMessage="Descripción: Campo Requerido" required="true"  class=" nuevo_anuncio form-control textarea input-group-lg" id="txtdescripcion"/>
+
+                                            <br/>
+                                            <div id="txtdescripciondiv2" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Descripción:</strong> Campo Requerido
+                                            </div>
+
+                                            <p class="help-block pull-left">1.500 caracteres maximo</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label hidden-xs hidden-sm  col-md-2 col-lg-2" for="txtmoneda" value="Moneda:"/>
+                                        <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-9 pull-right">
+                                            <h:selectOneMenu value="#{misAnunciosBean.anuncioParaGuardar.moneda}" required="true" requiredMessage="Moneda: Campo Requedido" onchange="actualizarelementos('txtmonedadiv', id, 'txtmonedadiv2');" id="txtmoneda" class="nuevo_anuncio input-lg form-control">
+                                                <f:selectItem itemLabel="Moneda" />
+                                                <f:selectItem itemLabel="$RD" itemValue="$RD"/>
+                                                <f:selectItem itemLabel="$USA" itemValue="$USA"/>
+                                                <f:selectItem itemLabel="$EURO" itemValue="$EURO"/>
+                                            </h:selectOneMenu><br/>
+                                            <div id="txtmonedadiv2" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Moneda:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label hidden-xs hidden-sm   col-md-2 col-lg-2" for="txtwhatsap" value="Uso Whatsap:"/>
+                                        <div  class="col-xs-12 col-sm-12 col-md-10 col-lg-9 pull-right">
+                                            <h:selectOneMenu value="#{misAnunciosBean.anuncioParaGuardar.whatsap}" required="true" requiredMessage="Whatsap: Campo Requedido"   onchange="actualizarelementos('txtwhatsapdiv', id, 'txtwhatsapdiv2')"  id="txtwhatsap" class=" nuevo_anuncio input-lg form-control">
+
+                                                <f:selectItem itemLabel="Whatsap ?" />
+                                                <f:selectItem itemLabel="Si" itemValue="Si"/>
+                                                <f:selectItem itemLabel="No" itemValue="No"/>
+                                            </h:selectOneMenu>
+
+                                            <div  class="sub-alert" >
+                                                <div id="txtwhatsapdiv2" class="alert alert-danger viewvalid" >
+                                                    <button class="close" data-dismiss="alert"><span></span></button>
+                                                    <strong>Whatsap:</strong> Campo Requerido
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br/>
+
+                                <div  class="col-lg-12">
+                                    <div class="col-lg-6 col-lg-offset-3">
+                                         <h:messages   errorStyle="alert mensajess alert-danger"  class="alert alert-success" showDetail="true" showSummary="true" />
+                                      <!-- <h:messages  class="alert mensajess alert-success" showDetail="true" showSummary="true" />
+                                        -->
+                                        <div id="pregreso" class="progress">
+                                            <div class="  progress-bar progress-bar-striped  active" rol="progressbar" style="width: 100%; min-width: 10%; background-color: black;" >
+                                                Esto tomara Varios minutos...! 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row  col-xs-offset-1 col-lg-offset-1" >
+
+
+                                    <div class="col-xs-10 col-sm-10 col-md-2 col-lg-2  ">  
+                                        <div id="foto1" class="form-group">
+                                            <figure>
+                                                <img  id="foto1image" src="imagen?foto=${misAnunciosBean.anuncioParaGuardar.foto1}1.jpg${anuncioBean.simbolo}porcentaje=0${anuncioBean.simbolo}ancho=140${anuncioBean.simbolo}alto=90" class="  img-responsive  img-thumbnail" />
+                           
+                                                <figcaption>
+                                                    <h6>Foto Pricipal</h6>
+
+                                                    <div style="padding-top: 5px;" class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                                        <span class="btn btn-default btn-file btn-xs btn-success "  >
+                                                            Modificar <h:inputFile  value="#{misAnunciosBean.foto1Part}" id="txtfoto1"  onchange="ttfoto(event, 'foto1image', 'foto2')" />
+                                                        </span>
+                                                    </div>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-10 col-sm-10 col-md-2 col-lg-2  ">    
+                                        <div id="foto2" class="form-group">
+                                            <figure>
+                                                    <img  id="foto2image" src="imagen?foto=${misAnunciosBean.anuncioParaGuardar.foto2}2.jpg${anuncioBean.simbolo}porcentaje=0${anuncioBean.simbolo}ancho=140${anuncioBean.simbolo}alto=90" class="  img-responsive  img-thumbnail" />
+                           
+
+                                                <figcaption>
+                                                    <h6>Foto 2</h6>
+
+                                                    <div style="padding-top: 5px;" class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                                        <span class="btn btn-default btn-file btn-xs btn-success "  >
+                                                            Modificar <h:inputFile  value="#{misAnunciosBean.foto2Part}" id="txtfoto2"  onchange="ttfoto(event, 'foto2image', 'foto2')" />
+                                                        </span>
+
+
+
+                                                    </div>
+                                                </figcaption>
+
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-10 col-sm-10 col-md-2 col-lg-2  ">    
+                                        <div id="foto3" class="form-group">
+                                            <figure>
+                                                <!--<img   id="foto3image"  src="resources/images/#//{misAnunciosBean.anuncioParaGuardar.foto3}3.jpg" class=" img-responsive img-thumbnail" />
+                                                --> <img  id="foto3image" src="imagen?foto=${misAnunciosBean.anuncioParaGuardar.foto3}3.jpg${anuncioBean.simbolo}porcentaje=0${anuncioBean.simbolo}ancho=140${anuncioBean.simbolo}alto=90" class="  img-responsive  img-thumbnail" />
+                           
+
+                                                <figcaption>
+                                                    <h6>Foto 3</h6>
+
+                                                    <div style="padding-top: 5px;" class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                                        <span class="btn btn-default btn-file btn-xs btn-success "  >
+                                                            Modificar <h:inputFile  value="#{misAnunciosBean.foto3Part}" id="txtfoto3"  onchange="ttfoto(event, 'foto3image', 'foto2')" />
+                                                        </span>
+
+
+
+                                                    </div>
+                                                </figcaption>
+
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-10 col-sm-10 col-md-2 col-lg-2  ">    
+                                        <div id="foto4" class="form-group">
+                                            <figure>
+                                               <!-- <img   id="foto4image"  src="resources/images/#///{misAnunciosBean.anuncioParaGuardar.foto4}4.jpg"  class=" img-responsive img-thumbnail" />
+                                              --><img  id="foto4image" src="imagen?foto=${misAnunciosBean.anuncioParaGuardar.foto4}4.jpg${anuncioBean.simbolo}porcentaje=0${anuncioBean.simbolo}ancho=140${anuncioBean.simbolo}alto=90" class="  img-responsive  img-thumbnail" />
+                           
+
+                                                <figcaption>
+                                                    <h6>Foto 4</h6>
+
+                                                    <div style="padding-top: 5px;" class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                                        <span class="btn btn-default btn-file btn-xs btn-success "  >
+                                                            Modificar <h:inputFile  value="#{misAnunciosBean.foto4Part}" id="txtfoto4"  onchange="ttfoto(event, 'foto4image', '')" />
+                                                        </span>
+
+
+                                                    </div>
+                                                </figcaption>
+
+                                            </figure>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-10 col-sm-10 col-md-2 col-lg-2  ">    
+                                        <div id="foto5" class="form-group">
+                                            <figure>
+                                                <img  id="foto5image" src="imagen?foto=${misAnunciosBean.anuncioParaGuardar.foto5}5.jpg${anuncioBean.simbolo}porcentaje=0${anuncioBean.simbolo}ancho=140${anuncioBean.simbolo}alto=90" class="  img-responsive  img-thumbnail" />
+                           
+                                              <!--  <img   id="foto5image"  src="resources/images/#///{misAnunciosBean.anuncioParaGuardar.foto5}5.jpg" class=" img-responsive img-thumbnail" />
+
+                                                -->
+                                                <figcaption>
+                                                    <h6>Foto 5</h6>
+
+                                                    <div style="padding-top: 5px;" class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                                        <span class="btn btn-default btn-file btn-xs btn-success "  >
+                                                            Modificar <h:inputFile  value="#{misAnunciosBean.foto5Part}" id="txtfoto5"  onchange="ttfoto(event, 'foto5image', '')" />
+                                                        </span>
+
+
+
+                                                    </div>
+                                                </figcaption>
+
+                                            </figure>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6 pull-left">
+                                    <button type="button" class=" btn btn-danger form-control" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6 pull-right">
+                                    <h:commandButton value="Guardar Cambios"  onclick="return crearAnuncioValidar();" actionListener="#{misAnunciosBean.guardarCambios()}"  class="btn btn-primary form-control">
+                                        <f:ajax execute="@form" render="modificarAnuncio :contenido" /> 
+                                    </h:commandButton> 
+                                </div>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h:outputScript library="js" name="mis_js/nuevo_anuncio.js"/>
+        <h:outputScript library="js" name="bootstrap.min.js"/>
+
+    </h:body>
+ 
+</html>

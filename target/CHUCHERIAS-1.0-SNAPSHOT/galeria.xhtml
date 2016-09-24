@@ -1,0 +1,403 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        #{anuncioBean.actualizarGaleria()}
+        <title>Galeria</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <h:outputStylesheet library="css" name="header.css"/>
+        <h:outputStylesheet library="css" name="/slider/slider.css"/>
+        <h:outputStylesheet library="css" name="footer.css"/>
+        <h:outputStylesheet library="css" name="index.css"/>
+        <h:outputScript library="js" name="jquery.min.js"/>
+       
+         <script src="sliderengine/amazingslider.js"></script>
+        <link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css"/>
+        <script src="sliderengine/initslider-1_1.js"></script>
+    </h:head>
+    <h:body>
+        <ui:include src="WEB-INF/importante/header.xhtml"/>
+
+
+
+        <section style="background-color: #101010; padding-top: 70px; padding-bottom: 30px;">
+
+            <div class="container">
+                <div id="amazingslider-wrapper-1" class=" col-xs-12 col-lg-9 col-lg-pull-1 pull-right" style="display:block;position:relative; padding-left:0px; padding-right:148px;margin:0px auto 0px;">
+                    <div id="amazingslider-1" style="display:block;position:relative;margin:0 auto;">
+                        <ul class="amazingslider-slides" style="display:none;">
+
+                           
+
+
+                                <li >
+                                    <img src="imagen?foto=${anuncioBean.limpiaString(anuncioBean.galeria.foto1)}1.jpg${anuncioBean.simbolo}porcentaje=50${anuncioBean.simbolo}ancho=0${anuncioBean.simbolo}alto=0" title="${anuncioBean.galeria.titulo} ${anuncioBean.galeria.precio} ${anuncioBean.galeria.moneda}" class="img-responsive" />
+
+
+                                </li>
+                                <li >
+                                    <img src="imagen?foto=${anuncioBean.limpiaString(anuncioBean.galeria.foto2)}5.jpg${anuncioBean.simbolo}porcentaje=50${anuncioBean.simbolo}ancho=0${anuncioBean.simbolo}alto=0" title="${anuncioBean.galeria.titulo} ${anuncioBean.galeria.precio} ${anuncioBean.galeria.moneda}" class="img-responsive" />
+
+
+                                </li>
+                                <li >
+                                    <img src="imagen?foto=${anuncioBean.limpiaString(anuncioBean.galeria.foto3)}3.jpg${anuncioBean.simbolo}porcentaje=50${anuncioBean.simbolo}ancho=0${anuncioBean.simbolo}alto=0" title="${anuncioBean.galeria.titulo} ${anuncioBean.galeria.precio} ${anuncioBean.galeria.moneda}" class="img-responsive" />
+
+
+                                </li>
+                                <li >
+                                    <img src="imagen?foto=${anuncioBean.limpiaString(anuncioBean.galeria.foto4)}4.jpg${anuncioBean.simbolo}porcentaje=50${anuncioBean.simbolo}ancho=0${anuncioBean.simbolo}alto=0" title="${anuncioBean.galeria.titulo} ${anuncioBean.galeria.precio} ${anuncioBean.galeria.moneda}" class="img-responsive" />
+
+
+                                </li>
+                                <li >
+                                    <img src="imagen?foto=${anuncioBean.limpiaString(anuncioBean.galeria.foto5)}5.jpg${anuncioBean.simbolo}porcentaje=50${anuncioBean.simbolo}ancho=0${anuncioBean.simbolo}alto=0" title="${anuncioBean.galeria.titulo} ${anuncioBean.galeria.precio} ${anuncioBean.galeria.moneda}" class="img-responsive" />
+
+
+                                </li>
+                            
+                            
+                           
+                        </ul>
+                        <ul class="amazingslider-thumbnails" style="display:none;">
+                              <li >
+                                    <img src="imagen?foto=${anuncioBean.limpiaString(anuncioBean.galeria.foto1)}1.jpg${anuncioBean.simbolo}porcentaje=0${anuncioBean.simbolo}ancho=140${anuncioBean.simbolo}alto=90" title="${anuncioBean.galeria.titulo} ${anuncioBean.galeria.precio} ${anuncioBean.galeria.moneda}" class="img-responsive" />
+
+
+                                </li>
+                                <li >
+                                    <img src="imagen?foto=${anuncioBean.limpiaString(anuncioBean.galeria.foto2)}2.jpg${anuncioBean.simbolo}porcentaje=0${anuncioBean.simbolo}ancho=140${anuncioBean.simbolo}alto=90" title="${anuncioBean.galeria.titulo} ${anuncioBean.galeria.precio} ${anuncioBean.galeria.moneda}" class="img-responsive" />
+
+
+                                </li>
+                                <li >
+                                    <img src="imagen?foto=${anuncioBean.limpiaString(anuncioBean.galeria.foto3)}3.jpg${anuncioBean.simbolo}porcentaje=0${anuncioBean.simbolo}ancho=140${anuncioBean.simbolo}alto=90" title="${anuncioBean.galeria.titulo} ${anuncioBean.galeria.precio} ${anuncioBean.galeria.moneda}" class="img-responsive" />
+
+
+                                </li>
+                                <li >
+                                    <img src="imagen?foto=${anuncioBean.limpiaString(anuncioBean.galeria.foto4)}4.jpg${anuncioBean.simbolo}porcentaje=0${anuncioBean.simbolo}ancho=140${anuncioBean.simbolo}alto=90" title="${anuncioBean.galeria.titulo} ${anuncioBean.galeria.precio} ${anuncioBean.galeria.moneda}" class="img-responsive" />
+
+
+                                </li>
+                                <li >
+                                    <img src="imagen?foto=${anuncioBean.limpiaString(anuncioBean.galeria.foto5)}5.jpg${anuncioBean.simbolo}porcentaje=0${anuncioBean.simbolo}ancho=140${anuncioBean.simbolo}alto=90" title="${anuncioBean.galeria.titulo} ${anuncioBean.galeria.precio} ${anuncioBean.galeria.moneda}" class="img-responsive" />
+
+
+                                </li>
+                        </ul>
+                        <div class="amazingslider-engine"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <section >
+            <div class="page-header" style="text-align: center;">
+                <h1><small><h:outputLabel value="${anuncioBean.limpiaString(anuncioBean.galeria.titulo)}"/></small></h1>
+            </div>
+        </section>
+
+
+
+
+
+        <section>
+            <div class="container" id="catalogo">
+                <div class="row">
+                    <div class=" fututoAnuncios col-md-2 col-lg-2 visible-md visible-lg ">
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                    </div>
+                    <div  class="col-xs-12 col-lg-12 col-md-8 col-lg-8 ">
+
+
+
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading" style="text-align: center;"> <h3>Detalles del Producto</h3> </div>
+
+                            <!-- Table -->
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Categoria</th>
+                                        <th>Tipo</th>
+                                        <th>Titulo</th>
+                                        <th>Precio</th>
+                                        <th>Publicado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${anuncioBean.limpiaString(anuncioBean.galeria.categoria)}</td>
+                                        <td>${anuncioBean.limpiaString(anuncioBean.galeria.tipo)}</td>
+                                        <td>${anuncioBean.limpiaString(anuncioBean.galeria.titulo)}</td>
+                                        <td>${anuncioBean.galeria.precio} ${anuncioBean.limpiaString(anuncioBean.galeria.moneda)}</td>
+                                        <td class="fecha">
+                                            ${anuncioBean.galeria.publicado}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div class="page-header" style="text-align: center;">
+                            <h1><small><h:outputLabel value="Descripcion Del Producto"/></small></h1>
+                        </div>
+
+                        <div style="text-align: center;" >${anuncioBean.limpiaString(anuncioBean.galeria.descripcion)}
+
+                        </div>
+
+                        <div class="page-header" style="text-align: center;">
+
+                        </div>
+
+
+
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading" style="text-align: center;"> <h3>Usuario</h3> </div>
+
+                            <!-- Table -->
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Sexo</th>
+                                        <th>Edad</th>
+                                        <th>Email</th>
+                                        <th>Telefono</th>
+                                        <th>Uso Whatsap</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${anuncioBean.limpiaString(anuncioBean.galeria.nombreusuario)}</td>
+                                        <td>${anuncioBean.limpiaString(anuncioBean.galeria.sexousuario)}</td>
+                                        <td>${anuncioBean.limpiaString(anuncioBean.galeria.edadusuario)}</td>
+                                        <td>${anuncioBean.limpiaString(anuncioBean.galeria.emailusuario)}</td>
+                                        <td>${anuncioBean.limpiaString(anuncioBean.galeria.telefonousuario)}</td>
+                                        <td>${anuncioBean.limpiaString(anuncioBean.galeria.whatsap)}</td>
+
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <!--<div   class="col-xs-12 anuncios  col-md-12 col-lg-12">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-7 col-lg-5">
+                                    <figure class=" fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+                                        <a>
+                                             <h:graphicImage  library="images" class="  img-responsive  img-thumbnail" name="#{catalogo.foto1}1.jpg"/>
+                                          </a>
+                                    </figure>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-7">
+                                    <figure>
+                                        <figcaption>
+                                            <p>
+                                                <a href="#"><h4>
+                                                        <strong>
+                      
+                    </strong>
+
+                </h4>
+            </a>  
+
+            <p>
+                <h4>${anuncioBean.galeria.categoria}, ${anuncioBean.galeria.tipo}</h4>
+            </p>
+
+        </p>
+        <p>
+            <h4>${anuncioBean.galeria.precio} ${anuncioBean.galeria.moneda}</h4>
+        </p>
+        <p>
+            <h4>Provincia: Santo Domingo</h4>
+        </p>
+        <p>
+            <h4>Telefono: 809-588-7844</h4>
+        </p>
+        <p>
+            <h4>Publicado: ${anuncioBean.galeria.publicado}</h4>
+        </p>
+    </figcaption>
+</figure>
+</div>
+</div>
+</div>-->
+
+                    </div>
+
+                    <div class=" fututoAnuncios col-md-2 col-lg-2 visible-md visible-lg  ">
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                        <p>
+                            Poner Publicidad
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <ui:include src="WEB-INF/importante/footer.xhtml"/>
+
+
+
+
+
+
+
+        <h:outputScript library="js" name="mis_js/index.js"/>
+        <h:outputScript library="js" name="bootstrap.min.js"/>
+
+    </h:body>
+
+</html>

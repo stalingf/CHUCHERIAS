@@ -1,0 +1,23 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19-jun-2016, 23:18:20
+    Author     : STALING
+*/
+
+.hover:hover{
+    background-color: #2aabd2;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 0px solid #000000;
+ 
+} 
+
+header{
+    background-color: black;
+    color: white;
+}

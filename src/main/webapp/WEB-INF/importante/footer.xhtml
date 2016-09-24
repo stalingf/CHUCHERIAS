@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <footer class="navbar-fixed-bottom " >
+       
+            <div class="container-fluid " >
+                <div class="col-md-8" style="padding-top: 10px;">
+                    <p class="copyright">Chucherias <span>2016</span>. Programador <a href="id">STALING</a></p>
+                </div>
+                <div class="col-md-4">
+
+                    <ul class="social">
+                        <li>
+                            <a target="_blank" class="fancybox" href="http://wwww.facebook.com/staling.furcalvaloy" >
+                                <a class="Facebook"/>
+                                <i class="ion-social-facebook "></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" class="fancybox" href="http://wwww.twitter.com/" >
+                                <a class="Twitter"/>
+                                <i class="ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="Linkedin">
+                                <i class="ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" class="fancybox" href="http://wwww.facebook.com/staling.furcalvaloy" >
+                                <a class="Google Plus"/>
+                                <i class="ion-social-googleplus"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        
+
+    </footer>
+    
+    <div class="modal fade bs-example-modal-lg" id="iniciar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" style="text-align: center;">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h3 class="modal-title">Iniciar sesión</h3>
+                    </div>
+                    <h:form class="form-horizontal" id="iniciarSession" >
+                        <div class="modal-body">
+                            <div class="row">
+
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label visible-lg col-lg-2" value="Email:" for="txtemaillogin"/>
+                                        <div  class="col-xs-12 col-md-12 col-lg-9 pull-right">
+                                          <h:inputText value="#{usuariosBean.usuario.email}"  a:placeholder="Email" onfocus="this.type = 'email';" maxlength="50"  onblur="actualizarelementos('txtemaillogindiv', id);" required="true" requiredMessage="Email: Campo Requedido " id="txtemaillogin"  class="form-control txtemaillogin  login input-lg" />
+                                            <br/>
+                                            <div  id="txtemaillogindiv" class="alert alert-danger viewvalid" >
+                                                <button class="close" maxlength="20" data-dismiss="alert"><span></span></button>
+                                                <strong>Email:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label visible-lg col-lg-2" value="Clave:" for="txtclavelogin"/>
+                                        <div  class="col-xs-12 col-md-12 col-lg-9 pull-right">
+                                            <h:inputSecret value="#{usuariosBean.usuario.clave}" maxlength="50" a:placeholder="Clave"  onblur="actualizarelementos('txtclavelogindiv', id);" required="true" requiredMessage="Clave: Campo Requedido " id="txtclavelogin"  class="form-control login input-lg" />
+                                            <br/>
+                                            <div id="txtclavelogindiv" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Clave:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+
+
+                                <div class=" cargandoLogin col-lg-6  col-lg-offset-3">
+                                    <div class="progress">
+                                        <div class="  progress-bar progress-bar-striped pro active"  rol="progressbar" style="width: 100%; min-width: 10%; background-color: black;" >
+                                            Iniciando Session.! 
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div id="mensajelogin" style="text-align: center;" class=" col-lg-6  col-lg-offset-3">
+
+                                    <h:messages class="alert mensajes alert-danger"  showDetail="false" showSummary="true"  />
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <button type="button" class=" btn btn-danger form-control" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+
+                                </div><div class="col-lg-6">
+                                    <h:commandButton value="Iniciar"  actionListener="#{usuariosBean.iniciarSession()}" onclick="return validamelogin();" class="btn btn-primary form-control">
+                                        <f:ajax execute="@form" render="iniciarSession"/>
+                                    </h:commandButton> 
+                                </div>
+                            </div>
+
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="modal fade bs-example-modal-lg" id="crear_cuenta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h3 style="text-align: center;" class="modal-title">Crea tu Cuenta</h3>
+                    </div>
+                    <h:form class="form-horizontal" id="crearCuenta"  >
+
+                        <div class="modal-body">
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label  visible-lg col-lg-2 " value="Nombre:" for="txtnombre"/>
+                                        <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-9 pull-right">
+                                            <h:inputText value="#{usuariosBean.usuario.nombre}" maxlength="20" a:placeholder="Nombre" onblur="actualizarelementos('txtnombrediv', id);" required="true" requiredMessage="Nombre: Campo Requedido " id="txtnombre"  class="form-control crear_cuenta input-lg" />
+                                            <br/>
+                                            <div id="txtnombrediv" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Nombre:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label  visible-lg col-lg-2 " value="Apellidos:" for="txtapellidos"/>
+                                        <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-9 pull-right">
+                                            <h:inputText value="#{usuariosBean.usuario.apellidos}" a:placeholder="Apellidos" maxlength="30" onblur="actualizarelementos('txtapellidosdiv', id);" required="true" requiredMessage="Apellidos: Campo Requedido " id="txtapellidos"  class="form-control crear_cuenta input-lg" />
+                                            <br/>
+                                            <div id="txtapellidosdiv" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Apellidos:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label  visible-lg col-lg-2 "   value="Sexo:" for="txtsexo"/>
+                                        <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-9 pull-right">
+                                            <h:selectOneMenu value="#{usuariosBean.usuario.sexo}"  onchange="actualizarelementos('txtsexodiv', id);" required="true" requiredMessage="Sexo: Campo Requedido " id="txtsexo"  class="form-control crear_cuenta input-lg" >
+                                                <f:selectItem itemLabel="Sexo ?"/>
+                                                <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+                                                <f:selectItem itemLabel="Femenino" itemValue="Femenino" />
+                                                <f:selectItem itemLabel="Otros" itemValue="Otros" />
+                                            </h:selectOneMenu>
+                                            <br/>
+                                            <div id="txtsexodiv" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Sexo:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label  visible-lg col-lg-2 " value="Edad:" for="txtedad"/>
+                                        <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-9 pull-right">
+
+                                            <h:selectOneMenu value="#{usuariosBean.usuario.edad}"   onchange="actualizarelementos('txtedaddiv', id);" required="true" requiredMessage="Edad: Campo Requedido " id="txtedad"  class="form-control nacimiento crear_cuenta input-lg" >
+                                                <f:selectItem itemLabel="Edad ?" />
+                                                <f:selectItem itemLabel="18" itemValue="18"/>
+                                                <f:selectItem itemLabel="19" itemValue="19"/>
+                                                <f:selectItem itemLabel="20" itemValue="20"/>
+                                                <f:selectItem itemLabel="21" itemValue="21"/>
+                                                <f:selectItem itemLabel="22" itemValue="22"/>
+                                            </h:selectOneMenu>
+
+                                            <br/>
+                                            <div id="txtedaddiv" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Edad:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label  visible-lg col-lg-2 " value="Teléfono" for="txttelefono"/>
+                                        <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-9 pull-right">
+                                          
+                                            <h:inputText  onclick="this.type = 'tel' ; " value="#{usuariosBean.usuario.telefono}" a:placeholder="Telefono" onkeyup="actualizanumero('txttelefonodiv', id);"  required="true" maxlength="14"  requiredMessage="Telefono: Campo Requedido " id="txttelefono"  class="form-control numerico txttelefono crear_cuenta input-lg" />
+                                            <br/>
+                                            <div id="txttelefonodiv" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Telefono:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label  visible-lg col-lg-2 " value="Email:" for="txtemail"/>
+                                        <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-9 pull-right">
+                                            <h:inputText value="#{usuariosBean.usuario.email}" maxlength="40" a:placeholder="Email" onfocus="this.type = 'email';"  onblur="actualizarelementos('txtemaildiv', id);" required="true" requiredMessage="Email: Campo Requedido " id="txtemail"  class="form-control email crear_cuenta input-lg" />
+                                            <br/>
+                                            <div id="txtemaildiv" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Email:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label  visible-lg col-lg-2 " value="Clave:" for="txtclave1"/>
+                                        <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-9 pull-right">
+                                            <h:inputSecret value="#{usuariosBean.usuario.clave}" a:placeholder="Clave" maxlength="50"  onblur="actualizarelementos('txtclave1div', id);" required="true" requiredMessage="Clave1: Campo Requedido " id="txtclave1"  class="form-control crear_cuenta input-lg" />
+                                            <br/>
+                                            <div id="txtclave1div" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Clave:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6">
+                                    <div  class="form-group" >
+                                        <h:outputLabel class="control-label  visible-lg col-lg-2 " value="R.PClave" for="txtclave2"/>
+                                        <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-9 pull-right">
+                                            <h:inputSecret a:placeholder="R.PClave" onblur="actualizarelementos('txtclave2div', id);" maxlength="50" required="true" requiredMessage="Clave2: Campo Requedido " id="txtclave2"  class="form-control crear_cuenta input-lg" />
+                                            <br/>
+                                            <div id="txtclave2div" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Repetir Clave:</strong> Campo Requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-lg-offset-4">
+                                    <div  class="form-group" >
+
+                                        <div  class="col-lg-6">
+
+                                            <div id="clavesdefirentes" class="alert alert-danger viewvalid" >
+                                                <button class="close" data-dismiss="alert"><span></span></button>
+                                                <strong>Las Claves son Difirentes.!</strong> 
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class=" cargando col-lg-6  col-lg-offset-3">
+                                    <div class="progress">
+                                        <div class="  progress-bar progress-bar-striped pro active" rol="progressbar" style="width: 100%; min-width: 10%; background-color: black;" >
+                                            Creando Cuenta.! 
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div style="text-align: center;" class=" col-lg-6  col-lg-offset-3">
+
+                                    <h:messages id="mensajeCrearCuenta" class="alert mensajes alert-warning"  showDetail="false" showSummary="true" />
+
+
+                                </div>
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+
+                                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6 pull-left">
+                                    <button type="button" class=" btn btn-danger form-control" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+
+                                </div>
+
+
+
+                                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6 pull-right">
+                                    <h:commandButton value="Crear Cuenta"  onclick="return validarCrearcuenta();" actionListener="#{usuariosBean.crearCuentaBean()}"  class="btn btn-primary form-control">
+                                        <f:ajax execute="@form" render="crearCuenta" /> 
+                                    </h:commandButton> 
+                                </div>
+                            </div>
+
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+
+</html>
+
+

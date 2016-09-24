@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <header  >
+        <div class="navbar navbar-default navbar-fixed-top ">
+            <div class="container" style=" background-color: black; width: 100%;">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" style="background-color: black;" data-target="#numero1" >
+                        <span class="sr-only">Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand visible-lg visible-md" style="padding-left: 80px;" >
+                        <a style="color: #dcdcdc;" href="../CHUCHERIAS"  >xXCHUCHERIAXx</a>
+                    </div>
+
+                    <div class="navbar-brand visible-xs visible-sm">
+                        <a style="color: #dcdcdc;" href="../CHUCHERIAS"  >xXCHUCHERIAXx</a>
+                    </div>
+                </div>
+                <nav class="collapse navbar-collapse navbar-right " role="navigation" id="numero1" style=" background-color: black;">
+                    <div class="main-menu" style=" background-color: black;">
+                        <ul   class="nav navbar-nav navbar-right" >
+                            <h:column id="loingout" rendered="#{!usuariosBean.getSession()}"  > 
+
+                                <li class="hover"  ><a style="color: white" class=" color" href="#iniciar"   data-toggle="modal" >Iniciar sesión</a></li>
+                                <li class="hover" ><a style="color: white" href="#crear_cuenta"   data-toggle="modal" >Crea tu Cuenta</a></li>
+                            </h:column>
+
+                            <li class="hover" ><a  style="color: white" href="../CHUCHERIAS">Inicio</a></li>
+                            <h:column id="loingin" rendered="#{usuariosBean.getSession()}" >
+
+                                <li  class=" hidden-xs hidden-sm">
+                                    <div style=" padding-top: 12px;  width:30px;">
+                                        <h:graphicImage class="img-responsive img-rounded " library="images" name="user.png"/>
+                                    </div>
+
+                                </li>
+                                <li  class="dropdown">
+                                    <a style="color: white" class="dropdown-toggle" data-toggle="dropdown" rol="botton" href="#">#{usuariosBean.usuarioSession.nombre.toUpperCase()}<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                       
+                                        <li class="hover"><a   href="#">Cambiar Clave</a></li>
+                                        <li  class="divider hover"></li>
+                                        <li class="hover">
+                                            <li class="hover"><a href="cerrarSession.xhtml">Salir</a></li>
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+                                <li  class=" dropdown">
+                                    <a class="dropdown-toggle "  style="color: white" data-toggle="dropdown" rol="botton" href="#">Anuncios<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="hover"><a class=" color-negro " href="Nuevo_Anuncio.xhtml">Nuevo Anuncio</a></li>
+                                        <li class="divider"></li>
+                                        <li class="hover"><a   href="mis_anuncios.xhtml">Mis Anuncios</a></li>
+                                        <li class="divider"></li>
+                                    </ul>
+                                </li>
+                            </h:column>
+                            <li class="hover"><a style="color: white" href="#">Ayuda</a></li>
+                            <li class="hover visible-lg visible-md " style=" padding-right: 80px;" />
+
+
+                        </ul>
+
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+
+
+    </header>
+
+
+</html>
+
+
